@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout/home')
 @section('body')
 
     <section class="home-slider owl-carousel">

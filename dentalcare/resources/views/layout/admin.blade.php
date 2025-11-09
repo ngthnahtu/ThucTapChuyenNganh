@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <base href="{{asset('public/')}}">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Phòng Khám Nha Khoa</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Nha Khoa Hoàn Mỹ</div>
             </a>
 
             <!-- Divider -->
@@ -46,15 +46,94 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('admin')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Tổng Quan</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
+
+            <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Chức Năng
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Các Trang Cơ Bản</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Tài Khoản:</h6>
+                        <a class="collapse-item" href="{{route('login')}}">Đăng Nhập</a>
+                        <a class="collapse-item" href="{{route('register')}}">Đăng Ký</a>
+                        <a class="collapse-item" href="{{route('forgot-password')}}">Quên Mật Khẩu</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Xử Lý:</h6>
+                        <a class="collapse-item" href="{{route('404')}}">404 Page</a>
+                        <a class="collapse-item" href="{{route('blank')}}">Blank Page</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('charts')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Thống Kê</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('staff')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách Nhân Viên</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('patient')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách Bệnh Nhân</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('appointment')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách Lịch Hẹn</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('service')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách Dịch Vụ</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('treatment')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Phiếu Điều Trị</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('bill')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách Hóa Đơn</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+                        <div class="sidebar-heading">
+                Thư Viện
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -91,65 +170,6 @@
                     </div>
                 </div>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="{{route('login')}}">Login</a>
-                        <a class="collapse-item" href="{{route('register')}}">Register</a>
-                        <a class="collapse-item" href="{{route('forgot-password')}}">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="{{route('404')}}">404 Page</a>
-                        <a class="collapse-item" href="{{route('blank')}}">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('charts')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('tables')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -171,7 +191,7 @@
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm Kiếm..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
@@ -331,7 +351,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nguyễn Thanh Tú</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -340,20 +360,12 @@
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
+                                    Thông tin cá nhân
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Đăng xuất!
                                 </a>
                             </div>
                         </li>
@@ -399,15 +411,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn thật sự muốn đăng xuất?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Chọn "Đăng xuất" bên dưới nếu bạn đã sẵn sàng kết thúc phiên làm việc hiện tại.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{route('login')}}">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
+                    <a class="btn btn-primary" href="{{route('login')}}">Đăng xuất</a>
                 </div>
             </div>
         </div>

@@ -1,6 +1,10 @@
-Đồ Án Thực Tập Chuyên Ngành
-Giảng Viên Hướng Dẫn: Trần Quốc Trường
-Sinh Viên Thực Hiện: Nguyễn Thanh Tú 
-Mã Sinh Viên: DH52201698
-Lớp: D22_TH14
-Đề tài: Quản lý phòng khám nha khoa bằng PHP Laravel
+# ĐỒ ÁN THỰC TẬP CHUYÊN NGÀNH  
+**Đề tài:** Quản lý phòng khám nha khoa bằng PHP Laravel
+
+## Giảng viên hướng dẫn
+- ThS. Trần Quốc Trường
+
+## Sinh viên thực hiện
+| Họ và tên | Mã số sinh viên | Lớp |
+|----------|--------------|-----|
+| **Nguyễn Thanh Tú** | DH52201698 | D22_TH14 |

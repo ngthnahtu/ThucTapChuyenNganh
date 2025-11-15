@@ -20,6 +20,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -43,11 +44,6 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('admin')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Tổng Quan</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -56,120 +52,30 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Chức Năng
+                Khoa
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Các Trang Cơ Bản</span>
+                    <span>Khoa</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Tài Khoản:</h6>
-                        <a class="collapse-item" href="{{route('login')}}">Đăng Nhập</a>
-                        <a class="collapse-item" href="{{route('register')}}">Đăng Ký</a>
-                        <a class="collapse-item" href="{{route('forgot-password')}}">Quên Mật Khẩu</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Xử Lý:</h6>
-                        <a class="collapse-item" href="{{route('404')}}">404 Page</a>
-                        <a class="collapse-item" href="{{route('blank')}}">Blank Page</a>
+                        <a class="collapse-item" href="{{route('doctortongquat')}}">Bác Sĩ Tổng Quát</a>
+                        <a class="collapse-item" href="{{route('doctorphuchoi')}}">Bác Sĩ Phục Hồi</a>
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('charts')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Thống Kê</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('staff')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Danh Sách Nhân Viên</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('patient')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Danh Sách Bệnh Nhân</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('appointment')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Danh Sách Lịch Hẹn</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('service')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Danh Sách Dịch Vụ</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('treatment')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Phiếu Điều Trị</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('bill')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Danh Sách Hóa Đơn</span></a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-                        <div class="sidebar-heading">
-                Thư Viện
-            </div>
+        
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="{{route('buttons')}}">Buttons</a>
-                        <a class="collapse-item" href="{{route('cards')}}">Cards</a>
-                    </div>
-                </div>
-            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="{{route('utilities-color')}}">Colors</a>
-                        <a class="collapse-item" href="{{route('utilities-border')}}">Borders</a>
-                        <a class="collapse-item" href="{{route('utilities-animation')}}">Animations</a>
-                        <a class="collapse-item" href="{{route('utilities-other')}}">Other</a>
-                    </div>
-                </div>
-            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -417,10 +323,6 @@
                     </button>
                 </div>
                 <div class="modal-body">Chọn "Đăng xuất" bên dưới nếu bạn đã sẵn sàng kết thúc phiên làm việc hiện tại.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
-                    <a class="btn btn-primary" href="{{route('login')}}">Đăng xuất</a>
-                </div>
             </div>
         </div>
     </div>

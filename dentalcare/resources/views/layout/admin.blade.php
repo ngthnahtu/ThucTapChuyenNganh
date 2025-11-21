@@ -55,15 +55,25 @@
                 Khoa
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link" href="{{route('khoa')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Khoa</span>
                 </a>
+            </li>
+
+            <div class="sidebar-heading">
+                Bác Sĩ Chuyên Khoa
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Bác sĩ chuyên khoa</span>
+                </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('doctortongquat')}}">Bác Sĩ Tổng Quát</a>
-                        <a class="collapse-item" href="{{route('doctorphuchoi')}}">Bác Sĩ Phục Hồi</a>
+                        <a class="collapse-item" href="{{route('doctorTQ')}}">Bác Sĩ Tổng Quát</a>
+                        <a class="collapse-item" href="{{route('doctorPH')}}">Bác Sĩ Phục Hồi</a>
                     </div>
                 </div>
             </li>
@@ -71,7 +81,7 @@
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-        
+
 
             <!-- Nav Item - Pages Collapse Menu -->
 
@@ -257,9 +267,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nguyễn Thanh Tú</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welcome</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="images/user.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -317,12 +327,16 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Bạn thật sự muốn đăng xuất?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Chọn "Đăng xuất" bên dưới nếu bạn đã sẵn sàng kết thúc phiên làm việc hiện tại.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
+                    <a class="btn btn-primary" href="{{ route('logout') }}"> {{ __('Đăng xuất') }} </a>
+                </div>
             </div>
         </div>
     </div>

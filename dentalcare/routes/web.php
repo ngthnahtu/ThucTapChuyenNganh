@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\admin\DoctorPhucHoi;
+use App\Http\Controllers\admin\DoctorTongQuat;
+use App\Http\Controllers\admin\KhoaController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // home
@@ -31,20 +35,20 @@ Route::get('/services', function () {
     return view('home/services');
 })->name('services');
 
-Route::get('/customer', function () {
-    return view('home/customer');
-})->name('customer');
-
 // admin
-
 Route::get('/admin', function () {
     return view('admin/admin');
 })->name('admin');
 
-Route::get('/doctortongquat', function () {
-    return view('admin/khoa/doctortongquat');
-})->name('doctortongquat');
+Route::get('/khoa', [KhoaController::class,'index'])->name('khoa');
 
-Route::get('/doctorphuchoi', function () {
-    return view('admin/khoa/doctorphuchoi');
-})->name('doctorphuchoi');
+Route::get('/doctorPH', [DoctorPhucHoi::class,'index'])->name('doctorPH');
+
+Route::get('/doctorTQ',[DoctorTongQuat::class,'index'])->name('doctorTQ');
+
+Route::get('logout',[HomeController::class,'logout'])->name('logout');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

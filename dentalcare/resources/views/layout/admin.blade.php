@@ -33,7 +33,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin')}}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin.dashboard')}}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -55,7 +55,7 @@
                 Khoa
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('khoa')}}">
+                <a class="nav-link" href="{{route('admin.khoa.index')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Khoa</span>
                 </a>
@@ -72,8 +72,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('doctorTQ')}}">Bác Sĩ Tổng Quát</a>
-                        <a class="collapse-item" href="{{route('doctorPH')}}">Bác Sĩ Phục Hồi</a>
+                        <a class="collapse-item" href="{{route('admin.bsTQ.index')}}">Bác Sĩ Tổng Quát</a>
+                        <a class="collapse-item" href="{{route('admin.bsPH.index')}}">Bác Sĩ Phục Hồi</a>
                     </div>
                 </div>
             </li>

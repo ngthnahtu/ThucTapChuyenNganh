@@ -1,4 +1,4 @@
-@extends('layout/home')
+@extends('layout.home')
 @section('body')
 <section class="ftco-section ftco-services">
 	<div class="container">
@@ -581,5 +581,4 @@
 </section>
 
 <div id="map"></div>
-
 @endsection

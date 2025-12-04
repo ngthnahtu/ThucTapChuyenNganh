@@ -32,17 +32,17 @@
 
 <body>
   <section class="home-slider owl-carousel">
-	<div class="slider-item bread-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container" data-scrollax-parent="true">
-			<div class="row slider-text align-items-end">
-				<div class="col-md-7 col-sm-12 ftco-animate mb-5">
-					<h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Well Experienced Doctors</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+    <div class="slider-item bread-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container" data-scrollax-parent="true">
+        <div class="row slider-text align-items-end">
+          <div class="col-md-7 col-sm-12 ftco-animate mb-5">
+            <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Well Experienced Doctors</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="{{route('home')}}">Denta<span>Care</span></a>
@@ -55,6 +55,19 @@
           <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
           <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
+          <li class="nav-item dropdown">
+            <a id="deptDropdown" href="#" class="nav-link dropdown-toggle" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Department
+            </a>
+            <div class="dropdown-menu" aria-labelledby="deptDropdown">
+              @forelse($khoas as $object)
+              <a class="dropdown-item" href="#">{{ $object->name }}</a>
+              @empty
+              <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">No departments</a>
+              @endforelse
+            </div>
+          </li>
           <li class="nav-item"><a href="{{route('doctors')}}" class="nav-link">Doctors</a></li>
           <li class="nav-item"><a href="{{route('blog')}}" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>

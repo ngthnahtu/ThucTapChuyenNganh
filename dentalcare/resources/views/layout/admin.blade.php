@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <base href="{{asset('public/')}}">
 
-    <title>Phòng Khám Nha Khoa</title>
+    <title>Denta Care</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -37,7 +37,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Nha Khoa Hoàn Mỹ</div>
+                <div class="sidebar-brand-text mx-3">Denta Care</div>
             </a>
 
             <!-- Divider -->
@@ -60,22 +60,14 @@
                     <span>Khoa</span>
                 </a>
             </li>
-
             <div class="sidebar-heading">
-                Bác Sĩ Chuyên Khoa
+                Bác Sĩ
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link" href="{{route('admin.doctor.index')}}">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Bác sĩ chuyên khoa</span>
+                    <span>Bác Sĩ</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('admin.bsTQ.index')}}">Bác Sĩ Tổng Quát</a>
-                        <a class="collapse-item" href="{{route('admin.bsPH.index')}}">Bác Sĩ Phục Hồi</a>
-                    </div>
-                </div>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -292,9 +284,11 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                @yield('body')
+                
                 <!--container-fluid-->
-
+                <div class="container-fluid">
+                @yield('body')
+                </div>
                 <!-- /.container-fluid -->
 
             </div>

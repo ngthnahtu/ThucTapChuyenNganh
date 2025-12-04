@@ -3,26 +3,26 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Khoa;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
-class KhoaController extends Controller
+class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $khoas=Khoa::all();
-        return view('admin.khoa.khoa-list',compact('khoas'));
-    }
+        $doctors=Doctor::all();
+        return view('admin.doctor.doctor-list',compact('doctors'));
+    }           
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('admin.khoa.add');
+        return view('admin.doctor.add');
     }
 
     /**
@@ -30,13 +30,16 @@ class KhoaController extends Controller
      */
     public function store(Request $request)
     {
-        $khoa= Khoa::create([
+        $doctor=Doctor::create([
             'name'=>$request->name,
             'image'=>$request->image,
+            'description'=>$request->description,
+            'age'=>$request->age,
+            'exp'=>$request->exp,
             'status'=>$request->status,
         ]);
-        if($khoa){
-            return redirect()->route('admin.khoa.index');
+        if($doctor){
+            return redirect()->route('admin.doctor.index');
         }
         else{
             return back();
@@ -46,15 +49,18 @@ class KhoaController extends Controller
     /**
      * Display the specified resource.
      */
-    
+    public function show(Doctor $doctor)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
     {
-        $khoa=Khoa::find($id);
-        return view('admin.khoa.edit',compact('khoa'));
+        $doctor=Doctor::find($id);
+        return view('admin.doctor.edit',compact('doctor'));
     }
 
     /**
@@ -62,14 +68,17 @@ class KhoaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $khoaUpdate=Khoa::find($id);
-        $khoaUpdate->update([
+        $doctorUpdate=Doctor::find($id);
+        $doctorUpdate->update([
             'name'=>$request->name,
             'image'=>$request->image,
+            'description'=>$request->description,
+            'age'=>$request->age,
+            'exp'=>$request->exp,
             'status'=>$request->status,
         ]);
-        if($khoaUpdate){
-            return redirect()->route('admin.khoa.index');
+        if($doctorUpdate){
+            return redirect()->route('admin.doctor.index');
         }
         else{
             return back();
@@ -81,17 +90,13 @@ class KhoaController extends Controller
      */
     public function destroy($id)
     {
-        $khoa=Khoa::find($id);
-        $khoa->delete();
-        if($khoa){
-            return redirect()->route('admin.khoa.index');
+        $doctor=Doctor::find($id);
+        $doctor->delete();
+        if($doctor){
+            return redirect()->route('admin.doctor.index');
         }
         else{
             return back();
         }
-    }
-    public function show(Khoa $khoa)
-    {
-        //
     }
 }

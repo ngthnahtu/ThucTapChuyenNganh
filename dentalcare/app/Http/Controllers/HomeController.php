@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Khoa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    public function admin()
+{
+    if (!Auth::check()) {
+        return redirect('/login');
+    }
+    return view('admin.admin');
+}
     /**
      * Create a new controller instance.
      *
@@ -14,7 +22,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $khoas= Khoa::all();
     }
 
     /**
@@ -24,7 +32,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $khoas= Khoa::where('status','1')->get();
+        return view('home.index',compact('khoas'));
     }
     public function logout(){
         if(Auth::check()){

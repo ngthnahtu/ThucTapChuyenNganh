@@ -1,24 +1,33 @@
 @extends('layout.admin')
 @section('body')
-<h1>Quản Lý Khoa</h1>
-<a class="btn btn-primary" href="{{route('admin.khoa.create')}}">Thêm Khoa Mới</a>
+<h1>Quản Lý Bác Sĩ</h1>
+<a class="btn btn-primary" href="{{route('admin.doctor.create')}}">Thêm Bác Sĩ Mới</a>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Mã</th>
+      <th scope="col">Khoa</th>
       <th scope="col">Tên</th>
-      <th scope="col">Trạng Thái</th>
       <th scope="col">Ảnh</th>
+      <th scope="col">Mô Tả</th>
+      <th scope="col">Tuổi</th>
+      <th scope="col">Kinh Nghiệm</th>
+      <th scope="col">Trạng Thái</th>
       <th scope="col">View</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
-    @forelse($khoas as $objects)
+    @forelse($doctors as $objects)
     <tr>
       <th scope="row">{{$objects->id}}</th>
+      <td>{{$objects->khoa->name}}</td>
       <td>{{$objects->name}}</td>
+      <td><img src="{{$objects->image}}" alt="{{$objects->name}}" width="100"></td>
+      <td>{{$objects->description}}</td>
+      <td>{{$objects->age}}</td>
+      <td>{{$objects->exp}}</td>
       <td>
         @if($objects->status==1)
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle text-success" viewBox="0 0 16 16">
@@ -32,20 +41,18 @@
         </svg>
         @endif
       </td>
-      <td><img src="{{$objects->image}}" alt="{{$objects->name}}" width="100"></td>
+      
       <td><a href=""><i class="fa-solid fa-eye"></i></a></td>
-      <td><a href="{{route('admin.khoa.edit',['khoa'=>$objects->id])}}"><i class="fa-solid fa-pen"></i></a></td>
-      <td>
-        <a href="{{route('admin.khoa.destroy',['khoa'=>$objects->id])}}"
-          onclick="event.preventDefault();window.confirm('Bạn đã chắc chắn xóa '+ '{{$objects->name}}' +' chưa?') 
-      ?document.getElementById('khoa-delete-{{ $objects->id }}').submit() :0;" class="btn btn-danger">
+      <td><a href="{{route('admin.doctor.edit',['doctor'=>$objects->id])}}"><i class="fa-solid fa-pen"></i></a></td>
+      <td><a href="{{route('admin.doctor.destroy',['doctor'=>$objects->id])}}"
+          onclick="event.preventDefault();window.confirm('Bạn đã chắc chắn xóa ' + '{{$objects->name}}' + ' chưa?')
+      ?document.getElementById('doctor-delete-{{$objects->id}}').submit():0;" class="btn btn-danger">
           <i class="fa-solid fa-trash"></i>
-          <form action="{{ route('admin.khoa.destroy', ['khoa' => $objects->id]) }}" method="post" id="khoa-delete-{{ $objects->id }}">
-            {{ csrf_field() }}
-            {{ method_field('delete') }}
+          <form action="{{route('admin.doctor.destroy',['doctor'=>$objects->id])}}" method="post" id="doctor-delete-{{$objects->id}}">
+            @csrf()
+            {{method_field('delete')}}
           </form>
-        </a>
-      </td>
+        </a></td>
     </tr>
     @empty
     <h1>Chưa có dữ liệu</h1>

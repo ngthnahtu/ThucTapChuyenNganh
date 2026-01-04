@@ -9329,3 +9329,178 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+    /* 1. Cấu hình hình dáng nút bấm (Tròn, Xanh, Luôn hiện) */
+.carousel-doctor .owl-nav .owl-prev,
+.carousel-doctor .owl-nav .owl-next,
+.carousel-testimony .owl-nav .owl-prev,
+.carousel-testimony .owl-nav .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0 !important;        /* Ghi đè margin mặc định */
+    z-index: 99;
+    opacity: 1 !important;           /* QUAN TRỌNG: Luôn hiển thị, không ẩn */
+    
+    /* KÍCH THƯỚC */
+    width: 40px !important;          
+    height: 40px !important;
+    
+    background: #007bff !important;  /* Nền xanh */
+    border-radius: 50%;              /* Hình tròn */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    
+    /* Căn giữa mũi tên */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+/* 2. Chỉnh màu icon mũi tên bên trong thành màu Trắng */
+.carousel-doctor .owl-nav .owl-prev span,
+.carousel-doctor .owl-nav .owl-next span,
+.carousel-testimony .owl-nav .owl-prev span,
+.carousel-testimony .owl-nav .owl-next span {
+    font-size: 20px !important;      
+    color: #fff !important;          /* Màu trắng */
+    font-weight: bold;
+}
+
+/* Ghi đè luôn cả pseudo-element (nếu template cũ dùng :before) */
+.carousel-doctor .owl-nav .owl-prev span:before,
+.carousel-doctor .owl-nav .owl-next span:before,
+.carousel-testimony .owl-nav .owl-prev span:before,
+.carousel-testimony .owl-nav .owl-next span:before {
+    color: #fff !important;
+    font-size: 20px !important;
+}
+
+/* 3. Vị trí đặt nút (Đẩy ra 2 bên lề -20px) */
+.carousel-doctor .owl-nav .owl-prev,
+.carousel-testimony .owl-nav .owl-prev {
+    left: -20px !important;  
+}
+
+.carousel-doctor .owl-nav .owl-next,
+.carousel-testimony .owl-nav .owl-next {
+    right: -20px !important; 
+}
+
+/* 4. Hiệu ứng khi di chuột vào (đổi màu xanh đậm) */
+.carousel-doctor .owl-nav .owl-prev:hover,
+.carousel-doctor .owl-nav .owl-next:hover,
+.carousel-testimony .owl-nav .owl-prev:hover,
+.carousel-testimony .owl-nav .owl-next:hover {
+    background: #0056b3 !important;
+}
+
+/* 5. Tắt khung viền đen/xanh khi click (Focus ring) */
+.carousel-doctor .owl-nav .owl-prev:focus,
+.carousel-doctor .owl-nav .owl-next:focus,
+.carousel-testimony .owl-nav .owl-prev:focus,
+.carousel-testimony .owl-nav .owl-next:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+/* ===== FIX PHẢN HỒI KHÔNG LỆCH ===== */
+.testimony-wrap {
+    position: relative;
+    height: 430px;
+    padding: 30px 20px 90px;
+    background: #fff;
+}
+
+.testimony-wrap .user-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.testimony-wrap .quote {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.testimony-wrap .text {
+    text-align: center;
+}
+
+.testimony-wrap .text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #777;
+}
+
+/* Tên + chức vụ cố định dưới */
+.testimony-wrap .author {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.testimony-wrap .author .name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.testimony-wrap .author .position {
+    font-size: 14px;
+    color: #999;
+}
+/* ===== HIỆN LẠI NÚT TRÁI PHẢI OWL ===== */
+.carousel-testimony {
+    position: relative;
+}
+
+/* Vị trí nút */
+.carousel-testimony .owl-nav {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+}
+
+/* Nút trái phải */
+.carousel-testimony .owl-nav button {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #007bff !important;
+    border-radius: 50%;
+    border: none;
+    color: #fff !important;
+    font-size: 20px;
+    line-height: 45px;
+}
+
+/* Trái */
+.carousel-testimony .owl-nav .owl-prev {
+    left: -60px;
+}
+
+/* Phải */
+.carousel-testimony .owl-nav .owl-next {
+    right: -60px;
+}
+
+/* Hover */
+.carousel-testimony .owl-nav button:hover {
+    background: #0056b3 !important;
+}
+

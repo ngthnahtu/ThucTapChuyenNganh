@@ -1,23 +1,26 @@
 @extends('layout.admin')
 @section('body')
-<h1>Quản Lý Khoa</h1>
-<a class="btn btn-primary" href="{{route('admin.khoa.create')}}">Thêm Khoa Mới</a>
+<h1>Quản Lý Dịch Vụ</h1>
+<a class="btn btn-primary" href="{{route('admin.service.create')}}">Thêm Dịch Vụ Mới</a>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Mã</th>
       <th scope="col">Tên</th>
-      <th scope="col">Trạng Thái</th>
+      <th scope="col">Mô Tả</th>
       <th scope="col">Ảnh</th>
+      <th scope="col">Trạng Thái</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
-    @forelse($khoas as $objects)
+    @forelse($services as $objects)
     <tr>
       <th scope="row">{{$objects->id}}</th>
       <td>{{$objects->name}}</td>
+      <td>{{$objects->description}}</td>
+      <td><img src="{{$objects->image}}" alt="{{$objects->name}}" width="100"></td>
       <td>
         @if($objects->status==1)
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle text-success" viewBox="0 0 16 16">
@@ -31,19 +34,16 @@
         </svg>
         @endif
       </td>
-      <td><img src="{{$objects->image}}" alt="{{$objects->name}}" width="100"></td>
-
-
-      <td><a href="{{route('admin.khoa.edit',['khoa'=>$objects->id])}}"><i class="fa-solid fa-pen"></i></a></td>
+      
+      <td><a href="{{route('admin.service.edit',['service'=>$objects->id])}}"><i class="fa-solid fa-pen"></i></a></td>
       <td>
-        <a href="{{route('admin.khoa.destroy',['khoa'=>$objects->id])}}"
+        <a href="{{route('admin.service.destroy',['service'=>$objects->id])}}"
           onclick="event.preventDefault();window.confirm('Bạn đã chắc chắn xóa '+ '{{$objects->name}}' +' chưa?') 
-      ?document.getElementById('khoa-delete-{{ $objects->id }}').submit() :0;" class="btn btn-danger">
-
+      ?document.getElementById('service-delete-{{ $objects->id }}').submit() :0;" class="btn btn-danger">
           <i class="fa-solid fa-trash"></i>
-          <form action="{{ route('admin.khoa.destroy', ['khoa' => $objects->id]) }}" method="post" id="khoa-delete-{{ $objects->id }}">
+          <form action="{{route('admin.service.destroy',['service'=>$objects->id])}}" method="post" id="service-delete-{{$objects->id}}">
             {{ csrf_field() }}
-            {{ method_field('delete') }}
+            {{ method_field('delete')}}
           </form>
         </a>
       </td>

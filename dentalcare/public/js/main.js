@@ -69,9 +69,9 @@
 	    }
 		});
 		$('.carousel-testimony').owlCarousel({
-			center: true,
+			// center: true,
 			loop: true,
-			items:1,
+			items:3,
 			margin: 30,
 			stagePadding: 0,
 			nav: true,
@@ -81,13 +81,35 @@
 					items: 1
 				},
 				600:{
-					items: 1
+					items: 2
 				},
 				1000:{
-					items: 1
+					items: 4
 				}
 			}
 		});
+		$('.carousel-doctor').owlCarousel({
+        loop: true,                 // Cho phép vòng lặp vô tận
+        autoplay: true,             // Tự động chạy
+        margin: 30,                 // Khoảng cách giữa các bác sĩ
+        nav: true,                  // BẬT nút mũi tên (Next/Prev)
+        dots: true,                 // BẬT dấu chấm tròn ở dưới
+        autoplayHoverPause: true,   // Di chuột vào thì dừng chạy
+        items: 3,                   // Mặc định hiện 3 bác sĩ
+        // Dùng icon mũi tên giống hệt phần Phản hồi
+        navText: ['<span class="ion-ios-arrow-back"></span>', '<span class="ion-ios-arrow-forward"></span>'],
+        responsive:{
+            0:{
+                items: 2            // Điện thoại hiện 1 người
+            },
+            600:{
+                items: 3            // Tablet hiện 2 người
+            },
+            1000:{
+                items: 4            // Máy tính hiện 3 người
+            }
+        }
+    });
 
 	};
 	carousel();

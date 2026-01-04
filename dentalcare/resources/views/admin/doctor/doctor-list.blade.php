@@ -13,7 +13,6 @@
       <th scope="col">Tuổi</th>
       <th scope="col">Kinh Nghiệm</th>
       <th scope="col">Trạng Thái</th>
-      <th scope="col">View</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -41,8 +40,7 @@
         </svg>
         @endif
       </td>
-      
-      <td><a href=""><i class="fa-solid fa-eye"></i></a></td>
+    
       <td><a href="{{route('admin.doctor.edit',['doctor'=>$objects->id])}}"><i class="fa-solid fa-pen"></i></a></td>
       <td><a href="{{route('admin.doctor.destroy',['doctor'=>$objects->id])}}"
           onclick="event.preventDefault();window.confirm('Bạn đã chắc chắn xóa ' + '{{$objects->name}}' + ' chưa?')

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -37,5 +38,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        // Kiểm tra nếu status = 0 (tài khoản bị khóa)
+        if ($user->status == 0) {
+            Auth::logout(); // Đăng xuất ngay
+
+            // Quay lại trang login và hiển thị lỗi ở ô email
+            return redirect('/login')->withErrors([
+                'email' => 'Tài khoản của bạn đã bị khóa. Vui lòng liên hệ Admin!',
+            ]);
+        }
+        // Nếu status = 1 thì cho phép đi tiếp
+        return redirect()->intended($this->redirectPath());
     }
 }

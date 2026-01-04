@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Khoa;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -22,7 +24,9 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.doctor.add');
+        $khoas=Khoa::where('status','1')->get();
+        $users = User::where('role', 1)->get();
+        return view('admin.doctor.add',compact('khoas','users'));
     }
 
     /**
@@ -37,6 +41,8 @@ class DoctorController extends Controller
             'age'=>$request->age,
             'exp'=>$request->exp,
             'status'=>$request->status,
+            'idKhoa'=>$request->idKhoa,
+            'idUser'=> $request->idUser,
         ]);
         if($doctor){
             return redirect()->route('admin.doctor.index');
@@ -60,14 +66,16 @@ class DoctorController extends Controller
     public function edit($id)
     {
         $doctor=Doctor::find($id);
-        return view('admin.doctor.edit',compact('doctor'));
+        $khoas=Khoa::where('status','1')->get();
+        $users = User::where('role', 1)->get();
+        return view('admin.doctor.edit',compact('doctor','khoas','users'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
-    {
+    {   
         $doctorUpdate=Doctor::find($id);
         $doctorUpdate->update([
             'name'=>$request->name,
@@ -76,6 +84,8 @@ class DoctorController extends Controller
             'age'=>$request->age,
             'exp'=>$request->exp,
             'status'=>$request->status,
+            'idKhoa'=>$request->idKhoa,
+            'idUser'=> $request->idUser,
         ]);
         if($doctorUpdate){
             return redirect()->route('admin.doctor.index');

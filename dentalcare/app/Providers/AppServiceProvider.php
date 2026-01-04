@@ -21,8 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // sẽ truyền cho tất cả các view
-        view()->share('khoas', Khoa::all());
         Schema::defaultStringLength(191);
     }
 }
